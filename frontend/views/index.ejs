@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>播放器例子-封面</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .vcp-player .marker{
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 255, 255, .5);
+            top: 0;
+            right: 5px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+<%- include("base.ejs")  %>
+<div id="video-container" style="margin: 0px auto;">
+</div>
+<p style="color: red">本测试页面仅用于演示，不适用于生产环境。</p>
+</body>
+<script>
+    var backend_ip = "http://49.235.245.52:4000/";
+    var Rdata = {
+        test:false,
+    }
+    new Vue({
+        el: '#app',
+        data:Rdata,
+        methods:{
+            testfunc:function(e){
+                console.log(this.test);
+                var url = backend_ip + "log/users";
+                var data = {
+                    time: '2020-05-21',
+                }
+                $.ajax({
+                    type:'POST',
+                    url:url,
+                    data:data,
+                    dataType:'json',
+                    crossDomain: true,
+                    success:function (result) {
+                        console.log('tey!');
+                        console.log(result);
+                    }
+                })
+                console.log('try');
+            }
+        },
+        created:function(e){
+            this.testfunc();
+            // var options = {
+            //     "m3u8": "http://aerber.cn/live/try.m3u8",
+            //     "flv": "http://aerber.cn/live/try.flv", //增加了一个 flv 的播放地址，用于PC平台的播放 请替换成实际可用的播放地址
+            //     "autoplay" : true,      //iOS 下 safari 浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+            //     "poster" : "http://www.test.com/myimage.jpg",
+            //     "width" :  '480',//视频的显示宽度，请尽量使用视频分辨率宽度
+            //     "height" : '320'//视频的显示高度，请尽量使用视频分辨率高度
+            // };
+            // var player = new TcPlayer('video-container', options);
+            // window.qcplayer = player;
+        }
+    })
+</script>
+
+
+
+</html>
+
