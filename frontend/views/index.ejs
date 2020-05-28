@@ -1,31 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" http-equiv="Access-Control-Allow-Origin" content="*">
-    <title>播放器例子-封面</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        .vcp-player .marker{
-            position: absolute;
-            font-size: 20px;
-            color: rgba(255, 255, 255, .5);
-            top: 0;
-            right: 5px;
-            z-index: 9999;
-        }
-    </style>
+  <meta charset="UTF-8" http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Index</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+
 </head>
+
 <body>
-<%- include("base.ejs")  %>
-<div id="video-container" style="margin: 0px auto;">
-</div>
-<p style="color: red">本测试页面仅用于演示，不适用于生产环境。</p>
+    <%- include("base.ejs")  %>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container-fluid">
+
+      <div class="row justify-content-center">
+        <div class="col-xl-9 d-flex align-items-center justify-content-between">
+          <h1 class="logo"><a href="index.ejs">MultimediaYKY</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.ejs" class="logo"><img src="/multimedia/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li class="active"><a href="index.ejs">Home</a></li>
+              <li><a href="#live">Live</a></li>
+              <li><a href="#videos">Past Videos</a></li>
+              <li class="drop-down"><a href="">About us</a>
+                <ul>
+                  <li><a href="#">Drop Down 1</a></li>
+                  <li class="drop-down"><a href="#">Deep Drop Down</a>
+                    <ul>
+                      <li><a href="#">Deep Drop Down 1</a></li>
+                      <li><a href="#">Deep Drop Down 2</a></li>
+                      <li><a href="#">Deep Drop Down 3</a></li>
+                      <li><a href="#">Deep Drop Down 4</a></li>
+                      <li><a href="#">Deep Drop Down 5</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Drop Down 2</a></li>
+                  <li><a href="#">Drop Down 3</a></li>
+                  <li><a href="#">Drop Down 4</a></li>
+                </ul>
+              </li>
+              <li><a href="#contact">Contact</a></li>
+
+            </ul>
+          </nav><!-- .nav-menu -->
+
+          <a href="#about" class="get-started-btn scrollto">Get Started</a>
+        </div>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8">
+          <h1>MultimediaYKY - View your body contours in real time.</h1>
+          <h2>We are team of designers making products with CV</h2>
+            <a href="a.html" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+  
+    <!-- ======= live Section ======= -->
+    <section id="live" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Our Video</h2>
+          <p>Here, you can see the live video, which has been processed by CV to outline the characters.</p>
+        </div>
+
+        <a name="myvideo">
+          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
+          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
+          </video>
+        </href>
+
+      </div>
+    </section><!-- End live Section -->
+    
+        <!-- ======= Video Section ======= -->
+        <section id="videos" class="services">
+          <div class="container">
+    
+            <div class="section-title">
+              <h2>Past Videos</h2>
+              <p>We stored the past videos and you can visit them by click.</p>
+            </div>
+    
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                  <h4><a href="http://49.235.245.52/AAA">AAAAAAAA</a></h4>
+                  <p>Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-file"></i></div>
+                  <h4><a href="http://49.235.245.52/BBB">BBBBBBB</a></h4>
+                  <p>Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-tachometer"></i></div>
+                  <h4><a href="http://49.235.245.52/CCC">CCCCCCCC</a></h4>
+                  <p>Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-world"></i></div>
+                  <h4><a href="http://49.235.245.52/DDD">DDDDDDD</a></h4>
+                  <p>Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-slideshow"></i></div>
+                  <h4><a href="http://49.235.245.52/EEE">EEEEEEE</a></h4>
+                  <p>Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-arch"></i></div>
+                  <h4><a href="http://49.235.245.52/FFF">FFFFFFFF</a></h4>
+                  <p>Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction.Here is the introduction</p>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </section><!-- End Video Section -->
+    
+        <!-- ======= Counts Section ======= -->
+        <section id="counts" class="counts">
+          <div class="container">
+    
+            <div class="text-center title">
+              <h3>What we have achieved so far</h3>
+              <p>The following is actually our vision.</p>
+            </div>
+    
+            <div class="row counters">
+    
+              <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">232</span>
+                <p>Clients</p>
+              </div>
+    
+              <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">521</span>
+                <p>Projects</p>
+              </div>
+    
+              <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">1,463</span>
+                <p>Hours Of Support</p>
+              </div>
+    
+              <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">15</span>
+                <p>Hard Workers</p>
+              </div>
+    
+            </div>
+    
+          </div>
+        </section><!-- End Counts Section -->
+
+    
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>MultimediaYKY</h3>
+      <p>Contact our team YKY for more information</p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">Copyright &copy; 2020.Company name All rights reserved.</div>
+      <div class="credits"></div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+
+
+
 </body>
+
+
+
+
+
+
+
 <script>
-    var backend_ip = "http://49.235.245.52:4000/";
+    var backend_ip = "http://49.235.245.52/";
     var Rdata = {
         test:false,
     }
