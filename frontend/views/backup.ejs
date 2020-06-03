@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>播放器例子-封面</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .vcp-player .marker{
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 255, 255, .5);
+            top: 0;
+            right: 5px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+<%- include("base.ejs")  %>
+<div id="video-container" style="margin: 0px auto;">
+</div>
+<p style="color: red">本测试页面仅用于演示，不适用于生产环境。</p>
+</body>
+</html>
