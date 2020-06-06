@@ -19,37 +19,25 @@
   <%- include("base.ejs")  %>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-inner-pages">
+  <header id="header" class="fixed-top ">
     <div class="container-fluid">
-
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center justify-content-between">
-          <h1 class="logo"><a href="index.html">MultimediaYKY</a></h1>
+          <h1 class="logo"><a href="#">MultimediaYKY</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
-          <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+          <!-- <a href="index.ejs" class="logo"><img src="/multimedia/assets/img/logo.png" alt="" class="img-fluid"></a>-->
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li class="active"><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li class="drop-down"><a href="">Drop Down</a>
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#live">Live</a></li>
+              <li class="drop-down"><a href="#videos">Past Videos</a>
                 <ul>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li class="drop-down"><a href="#">Deep Drop Down</a>
-                    <ul>
-                      <li><a href="#">Deep Drop Down 1</a></li>
-                      <li><a href="#">Deep Drop Down 2</a></li>
-                      <li><a href="#">Deep Drop Down 3</a></li>
-                      <li><a href="#">Deep Drop Down 4</a></li>
-                      <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Drop Down 2</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
+                  <li><a href="http://49.235.245.52/AAA">Jump</a></li>
+                  <li><a href="http://49.235.245.52/BBB">Climb</a></li>
+                  <li><a href="http://49.235.245.52/CCC">Handstand</a></li>
+                  <li><a href="http://49.235.245.52/DDD">Chew</a></li>
+                  <li><a href="http://49.235.245.52/EEE">Walk</a></li>
+                  <li><a href="http://49.235.245.52/FFF">Pullup</a></li>
                 </ul>
               </li>
               <li><a href="#contact">Contact</a></li>
@@ -57,7 +45,7 @@
             </ul>
           </nav><!-- .nav-menu -->
 
-          <a href="#about" class="get-started-btn scrollto">Get Started</a>
+          <a href="#live" class="get-started-btn scrollto">Get Started</a>
         </div>
       </div>
 
@@ -72,13 +60,13 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Past Videos（Chew）</h2>
-          <p>There are Surprising Benefits of Chewing. For example, you can burn calories just by chewing. And Reduce heartburn.</p>
+          <h2>Past Videos（Jump）</h2>
+          <p>Improve Strength and Power. Using plyometric exercises such as jump squats, box jumps, lateral jumps, single leg jumps alone or in a circuit will help to activate fast-twitch muscle fibres.</p>
         </div>
         <div class="recommended">
           <div class="recommended-grids">
             <div class="recommended-info">
-              <h3>Chew</h3>
+              <h3>Jump</h3>
             </div>
             <div id="app">
               <ol>
@@ -231,10 +219,9 @@
             // this.VideoInfo.push(dic);
             // console.log((this.VideoInfo).length);
             var that = this;
-            console.log('test-chew......');
             var url = backend_ip + "log/users";
               var data = {
-                  operation: 'chew',
+                  operation: 'jump',
               }
               $.ajax({
                   type:'POST',
@@ -243,7 +230,6 @@
                   dataType:'json',
                   crossDomain: true,
                   success:function (result) {
-                      console.log('test-chew');
                       console.log(result.ret);
                       var VideoArray = result.ret;
                       for(var i=0;i<VideoArray.address.length;i++){

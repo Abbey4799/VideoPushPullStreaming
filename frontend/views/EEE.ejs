@@ -9,78 +9,35 @@
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="/multimedia/assets/img/favicon.png" rel="icon">
-  <link href="/multimedia/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="/multimedia/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/multimedia/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="/multimedia/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/multimedia/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="/multimedia/assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="/multimedia/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="/multimedia/assets/css/style.css" rel="stylesheet">
-
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="keywords" content="My Play Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
   Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-  <!-- bootstrap -->
-  <link href="/multimedia/css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
-  <!-- //bootstrap -->
-  <link href="/multimedia/css/dashboard.css" rel="stylesheet">
-  <!-- Custom Theme files -->
-  <link href="/multimedia/css/style.css" rel='stylesheet' type='text/css' media="all" />
-  <script src="/multimedia/js/jquery-1.11.1.min.js"></script>
-  <!--start-smoth-scrolling-->
-  <!-- fonts -->
-  <link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.useso.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
+  <%- include("base.ejs")  %>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-inner-pages">
+  <header id="header" class="fixed-top ">
     <div class="container-fluid">
-
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center justify-content-between">
-          <h1 class="logo"><a href="index.html">MultimediaYKY</a></h1>
+          <h1 class="logo"><a href="#">MultimediaYKY</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
-          <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+          <!-- <a href="index.ejs" class="logo"><img src="/multimedia/assets/img/logo.png" alt="" class="img-fluid"></a>-->
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li class="active"><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li class="drop-down"><a href="">Drop Down</a>
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#live">Live</a></li>
+              <li class="drop-down"><a href="#videos">Past Videos</a>
                 <ul>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li class="drop-down"><a href="#">Deep Drop Down</a>
-                    <ul>
-                      <li><a href="#">Deep Drop Down 1</a></li>
-                      <li><a href="#">Deep Drop Down 2</a></li>
-                      <li><a href="#">Deep Drop Down 3</a></li>
-                      <li><a href="#">Deep Drop Down 4</a></li>
-                      <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Drop Down 2</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
+                  <li><a href="http://49.235.245.52/AAA">Jump</a></li>
+                  <li><a href="http://49.235.245.52/BBB">Climb</a></li>
+                  <li><a href="http://49.235.245.52/CCC">Handstand</a></li>
+                  <li><a href="http://49.235.245.52/DDD">Chew</a></li>
+                  <li><a href="http://49.235.245.52/EEE">Walk</a></li>
+                  <li><a href="http://49.235.245.52/FFF">Pullup</a></li>
                 </ul>
               </li>
               <li><a href="#contact">Contact</a></li>
@@ -88,7 +45,7 @@
             </ul>
           </nav><!-- .nav-menu -->
 
-          <a href="#about" class="get-started-btn scrollto">Get Started</a>
+          <a href="#live" class="get-started-btn scrollto">Get Started</a>
         </div>
       </div>
 
@@ -106,162 +63,28 @@
           <h2>Past Videos（Walk）</h2>
           <p>YKY hold the view that walk is the easiest way to build your health. It can reduced risk of heart disease and stroke. You can have stronger bones and improved balance by walking.</p>
         </div>
-
-
-      <div class="recommended">
-        <div class="recommended-grids">
-          <div class="recommended-info">
-            <h3>Sports</h3>
-          </div>
-          <div class="col-md-3 resent-grid recommended-grid">
-            <div class="resent-grid-img recommended-grid-img">
-              <a href="#video001"><img src="/multimedia/images/g.jpg" alt="" /></a>
-              <div class="time small-time">
-                <p>7:30</p>
-              </div>
-              <div class="clck small-clck">
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-              </div>
+        <div class="recommended">
+          <div class="recommended-grids">
+            <div class="recommended-info">
+              <h3>Walk</h3>
             </div>
-            <div class="resent-grid-info recommended-grid-info video-info-grid">
-              <h5><a href="#video002" class="title">Varius sit sed viverra nullam viverra nullam interdum metus</a></h5>
-              <ul>
-                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-              </ul>
+            <div id="app">
+              <ol>
+                  <div class="col-md-3 resent-grid recommended-grid" v-for="item in VideoInfo" :key="item.pic">
+                <!-- <div class="resent-grid-img recommended-grid-img"> -->
+                    <a :href="item.id" @click="play(item.address)"><img :src="item.pic" alt="" /></a>
+                    <div class="time small-time">
+                      <p>{{item['time']}}</p>
+                    </div>
+                    <div class="clck small-clck">
+                      <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    </div>      
+                  </div>
+              </ol>
             </div>
           </div>
-          <div class="col-md-3 resent-grid recommended-grid">
-            <div class="resent-grid-img recommended-grid-img">
-              <a href="#video003"><img src="/multimedia/images/g1.jpg" alt="" /></a>
-              <div class="time small-time">
-                <p>9:34</p>
-              </div>
-              <div class="clck small-clck">
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-              </div>
-            </div>
-            <div class="resent-grid-info recommended-grid-info video-info-grid">
-              <h5><a href="#video004" class="title">Nullam interdum viverra nullam metus varius sit sed viverra</a></h5>
-              <ul>
-                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3 resent-grid recommended-grid">
-            <div class="resent-grid-img recommended-grid-img">
-              <a href="#video005"><img src="/multimedia/images/g2.jpg" alt="" /></a>
-              <div class="time small-time">
-                <p>5:34</p>
-              </div>
-              <div class="clck small-clck">
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-              </div>
-            </div>
-            <div class="resent-grid-info recommended-grid-info video-info-grid">
-              <h5><a href="#video006" class="title">Varius sit sed viverra nullam viverra nullam interdum metus</a></h5>
-              <ul>
-                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3 resent-grid recommended-grid">
-            <div class="resent-grid-img recommended-grid-img">
-              <a href="#video007"><img src="/multimedia/images/g3.jpg" alt="" /></a>
-              <div class="time small-time">
-                <p>6:55</p>
-              </div>
-              <div class="clck small-clck">
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-              </div>
-            </div>
-            <div class="resent-grid-info recommended-grid-info video-info-grid">
-              <h5><a href="#video008" class="title">Nullam interdum metus viverra nullam varius sit sed viverra</a></h5>
-              <ul>
-                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-              </ul>
-            </div>
-          </div>
-          <div class="clearfix"> </div>
         </div>
-        <div class="recommended-grids">
-          <div class="col-md-3 resent-grid recommended-grid">
-            <div class="resent-grid-img recommended-grid-img">
-              <a href="#video009"><img src="/multimedia/images/we2.jpg" alt=""></a>
-              <div class="time small-time">
-                <p>7:30</p>
-              </div>
-              <div class="clck small-clck">
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-              </div>
-            </div>
-            <div class="resent-grid-info recommended-grid-info video-info-grid">
-              <h5><a href="#video010" class="title">Varius sit sed viverra nullam viverra nullam interdum metus</a></h5>
-              <ul>
-                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3 resent-grid recommended-grid">
-            <div class="resent-grid-img recommended-grid-img">
-              <a href="#video011"><img src="/multimedia/images/we1.jpg" alt=""></a>
-              <div class="time small-time">
-                <p>9:34</p>
-              </div>
-              <div class="clck small-clck">
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-              </div>
-            </div>
-            <div class="resent-grid-info recommended-grid-info video-info-grid">
-              <h5><a href="#video012" class="title">Nullam interdum viverra nullam metus varius sit sed viverra</a></h5>
-              <ul>
-                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3 resent-grid recommended-grid">
-            <div class="resent-grid-img recommended-grid-img">
-              <a href="#video013"><img src="/multimedia/images/we4.jpg" alt=""></a>
-              <div class="time small-time">
-                <p>5:34</p>
-              </div>
-              <div class="clck small-clck">
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-              </div>
-            </div>
-            <div class="resent-grid-info recommended-grid-info video-info-grid">
-              <h5><a href="#video014" class="title">Varius sit sed viverra nullam viverra nullam interdum metus</a></h5>
-              <ul>
-                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3 resent-grid recommended-grid">
-            <div class="resent-grid-img recommended-grid-img">
-              <a href="#video015"><img src="/multimedia/images/we3.jpg" alt=""></a>
-              <div class="time small-time">
-                <p>6:55</p>
-              </div>
-              <div class="clck small-clck">
-                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-              </div>
-            </div>
-            <div class="resent-grid-info recommended-grid-info video-info-grid">
-              <h5><a href="#video016" class="title">Nullam interdum metus viverra nullam varius sit sed viverra</a></h5>
-              <ul>
-                <li><p class="author author-info"><a href="#" class="author">John Maniya</a></p></li>
-                <li class="right-list"><p class="views views-info">2,114,200 views</p></li>
-              </ul>
-            </div>
-          </div>
-          <div class="clearfix"> </div>
-        </div>
+
       </div>
     </div>
     </section>
@@ -274,16 +97,21 @@
           <h2>Our Video</h2>
           <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
         </div>
-
-        <a name="myvideo">
+    <!-- ======= 只有safari可以 ======= -->
+        <!-- <a name="myvideo">
           <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
+          <source src="" type="video/mp4">
           </video>
-        </href>
-
+        </href> -->
+        <div class="video_wrap" ref="videoWrap" id="video-box">
+          <div class="video">
+            <!-- ======= js动态插入 ======= -->
+          </div>
+        </div>
       </div>
     </section>
-    <section id="video002" class="about">
+
+    <!-- <section id="video002" class="about">
       <div class="container">
 
         <div class="section-title">
@@ -293,7 +121,7 @@
 
         <a name="myvideo">
           <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
+          <source src="/videos/first_chew/test.mp4" type="application/x-mpegURL">
           </video>
         </href>
 
@@ -310,7 +138,7 @@
 
         <a name="myvideo">
           <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
+          <source src="/videos/first_chew/test.mp4" type="application/x-mpegURL">
           </video>
         </href>
 
@@ -327,217 +155,14 @@
 
         <a name="myvideo">
           <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
+          <source src="/videos/first_chew/test.mp4" type="application/x-mpegURL">
           </video>
         </href>
 
       </div>
     </section>
-    
-    <section id="video005" class="about">
-      <div class="container">
+     -->
 
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
-
-    <section id="video006" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
-    
-    <section id="video007" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
-    
-    <section id="video008" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
-
-    <section id="video009" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
-
-    <section id="video010" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
-
-    <section id="video011" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
-
-
-    <section id="video012" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
-
-    <section id="video013" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
-
-    <section id="video014" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
-
-    <section id="video015" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
-
-    <section id="video016" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Video</h2>
-          <p>Here, you can see the past video, which has been processed by CV to outline the characters.</p>
-        </div>
-
-        <a name="myvideo">
-          <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="900" height="600" data-setup='{}'>
-          <source src="http://aerber.cn/live/try.m3u8" type="application/x-mpegURL">
-          </video>
-        </href>
-
-      </div>
-    </section>
     <!-- End live Section -->
     
 
@@ -566,20 +191,91 @@
   <div id="preloader"></div>
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="/multimedia/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="/multimedia/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/multimedia/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="/multimedia/assets/vendor/php-email-form/validate.js"></script>
-  <script src="/multimedia/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="/multimedia/assets/vendor/counterup/counterup.min.js"></script>
-  <script src="/multimedia/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/multimedia/assets/vendor/venobox/venobox.min.js"></script>
-  <script src="/multimedia/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="/multimedia/assets/js/main.js"></script>
 
 </body>
+
+
+<script>
+  var backend_ip = "http://49.235.245.52/";
+  var Rdata = {
+      test:false,
+      VideoInfo:[],
+      VideoAddr:"test",
+  }
+  new Vue({
+      el: '#app',
+      data:Rdata,
+      methods:{
+          testfunc:function(e){
+            var dic = {
+              'address':'/videos/first_chew/test.mp4\n',
+              'time':'10:30',
+              'pic':"/multimedia/images/g2.jpg",
+              'id':"#video001",
+            }
+            // this.VideoInfo.push(dic);
+            // this.VideoInfo.push(dic);
+            // this.VideoInfo.push(dic);
+            // this.VideoInfo.push(dic);
+            // console.log((this.VideoInfo).length);
+            var that = this;
+            console.log('test-chew......');
+            var url = backend_ip + "log/users";
+              var data = {
+                  operation: 'walk',
+              }
+              $.ajax({
+                  type:'POST',
+                  url:url,
+                  data:data,
+                  dataType:'json',
+                  crossDomain: true,
+                  success:function (result) {
+                      console.log('test-chew');
+                      console.log(result.ret);
+                      var VideoArray = result.ret;
+                      for(var i=0;i<VideoArray.address.length;i++){
+                          var dic = {};
+                          dic.address = VideoArray.address[i];
+                          dic.pic = VideoArray.pic[i];
+                          dic.time = VideoArray.time[i];
+                          dic.id = "#video001";
+                          that.VideoInfo.push(dic);
+                          console.log(that.VideoInfo);
+                      }
+                      console.log(that.VideoInfo);
+                      that.$set(that,that.VideoInfo,that.VideoInfo);
+                  }
+              })
+              console.log('try');
+          },
+          play:function(e){
+            console.log('addr:');
+            console.log(e);
+            var sourceDom = $(
+                '<video id = "onlyone" controls="controls" width="900" height="600" ><source src="' + e + '"></video>'
+              );
+            $(".video").html();
+            $("#onlyone").remove();
+            $(".video").append(sourceDom);
+            $("#video-box").show();
+
+            // 自动播放
+            $("#video-box video")[0].play();
+            $("#video-box video")[0].load();
+          }
+      },
+      created:function(e){
+          this.testfunc();
+      }
+  })
+</script>
+
+
+
+
+
+
+
 
 </html>

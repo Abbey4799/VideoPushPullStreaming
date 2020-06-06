@@ -15,6 +15,7 @@ from scipy.spatial.distance import cdist
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 import argparse
+import pickle
 
 from utils import *
 from model import *
@@ -24,7 +25,7 @@ import subprocess
 import paddlehub as hub
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-
+from PIL import Image
 
  
  
@@ -49,22 +50,24 @@ def frame2video(im_dir,video_dir,fps):
         #     print(im_name)
         #     break
     videoWriter.release()
-    print('Images converted to video: ',video_dir)
+    #print('Images converted to video: ',video_dir)
 
 
 def ppstream(video_info):
+    #print('test1')
     pose_estimation = hub.Module(name="human_pose_estimation_resnet50_mpii")
     #human_parser = hub.Module(name="ace2p")
     #stylepro_artistic = hub.Module(name="stylepro_artistic")
-
-    rtsp = "rtmp://aerber.cn/live/ykyliveteststream"
-    rtmp = 'rtmp://96941.livepush.myqcloud.com/live/lalala?txSecret=187cfff3247f32c39576ca7bef85d62c&txTime=5EC15F7F'
+    
+    rtsp = "rtmp://multimediayky.club/live/try"
+    rtmp = 'rtmp://96941.livepush.myqcloud.com/live/lalala?txSecret=d0059c9b7e898f1c875adab3e1d2fd1b&txTime=5FC4E01A'
 
     # 读取视频并获取属性
+    #print('test2')
     cap = cv2.VideoCapture(rtsp)
     size = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
     sizeStr = str(size[0]) + 'x' + str(size[1])
-
+    
     command = ['ffmpeg',
         '-y', '-an',
         '-f', 'rawvideo',
@@ -78,48 +81,90 @@ def ppstream(video_info):
         '-preset', 'ultrafast',
         '-f', 'flv',
         rtmp]
-
+    
+   
     pipe = subprocess.Popen(command
     , shell=False
     , stdin=subprocess.PIPE
     )
 
-    
-    frame_dir = '/home/ubuntu/html/backend/VideoNet/video'
+    frame_dir = '/home/ubuntu/html/frontend/public/videos'
     video_path = os.path.join(frame_dir, video_info)
+    if not os.path.exists(video_path):
+        os.mkdir(video_path)
+    
+    path = '/home/ubuntu/html/test.pkl'
+    f = open(path, 'wb')
+    arrays = []
 
     image_cnt = 1
+
     while cap.isOpened():
         success,frame = cap.read()
-        #print(type(frame))
         if success:
+            #print(type(frame))
+            
+            frame2 = torch.rand(frame.shape[0], frame.shape[1], frame.shape[2])
+            frame2 = frame2*100
+            frame2 = frame2.int()
+            frame2 = np.array(frame2)
+            #print('frame1:',frame)
+            
             images = [frame]
             s = "%05d"%image_cnt
             frame_path = 'image_' + s + '.jpg'
             frame_abs_path = os.path.join(video_path,frame_path)
-            frame.save(frame_abs_path)
-            result = pose_estimation.keypoint_detection(images=images, batch_size=1,use_gpu=True, output_dir='/home/output_pose/'+str(image_cnt), visualization=True)
-            images = os.listdir('/home/output_pose/'+str(image_cnt))
-            image = os.path.join('/home/output_pose',images[0])
-            frame = mpimg.imread(image)
+            #print('frame1:',frame)
+            frame_rgb = Image.fromarray(frame.astype('uint8')).convert('RGB')
+            #print(type(frame_rgb))
+            frame_rgb.save(frame_abs_path)
+            
+            result = pose_estimation.keypoint_detection(images=images, batch_size=1, output_dir='/home/ubuntu/html/output_pose/'+str(image_cnt), visualization=True)
+            images = os.listdir('/home/ubuntu/html/output_pose/'+str(image_cnt))
+            #print(images)
+            image_path = os.path.join('/home/ubuntu/html/output_pose/'+str(image_cnt),images[0])
+            #print(image_path)
+            frame2 = mpimg.imread(image_path)
+            arrays.append(frame2)
+            
+
+            #print(type(frame))
+            #frame_rgb = Image.fromarray(frame.astype('uint8')).convert('RGB')
+            #plt.imsave('/home/ubuntu/html/test/'+str(image_cnt)+'_.jpg',frame_rgb)
+            
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break    
-            pipe.stdin.write(frame.tostring())
+            #print('frame2:',frame)
+            #pipe.stdin.write(frame2.tostring())
+            image_cnt += 1
+           #print(image_cnt)
+    
+    a_num = np.array(arrays)
+    print(a_num.shape)
+    pickle.dump(a_num, f)
+    f.close()
 
+    f1 = open(path, 'rb')
+    data = pickle.load(f1)
+    print(data.shape)
+    
     cap.release()
     pipe.terminate()
+    print('success')
 
-    im_dir = video_path#帧存放路径
-    video_dir = os.path.join(im_dir,'test.video') #合成视频存放的路径
-    fps = 5 #帧率，每秒钟帧数越多，所显示的动作就会越流畅
-    frame2video(im_dir, video_dir, fps)
+    #im_dir = video_path#帧存放路径
+    #video_base_dir = os.path.join('/home/ubuntu/html/frontend/public/videos', video_info)
+    #video_dir = os.path.join(im_dir,'test.mp4') #合成视频存放的路径
+    #fps = 5 #帧率，每秒钟帧数越多，所显示的动作就会越流畅
+    #frame2video(im_dir, video_dir, fps)
+
 
 
 class VideoDB(object):
     def __init__(self):
         myclient = pymongo.MongoClient('mongodb://localhost:27017/')
         mydb = myclient['project']
-        collection = mydb['video']
+        collection = mydb['videos']
         self.client = myclient
         self.collection = collection
  
@@ -136,10 +181,10 @@ class VideoDB(object):
         # 数据查询
         myquery = { "class": video_class }
         mydoc = self.collection.find(myquery)
-        print(video_class,' has the following videos:')
+        #print(video_class,' has the following videos:')
         addresses = []
         for x in mydoc:
-            print(x['address'])
+            #print(x['address'])
             addresses.append(x['address'])
         # 关闭连接
         self.client.close()
@@ -165,7 +210,7 @@ class VideoDB(object):
 
 
 
-def run(option, video_info, video_class)
+def run(option, video_info, video_class):
     np.random.seed(0)
     torch.manual_seed(0)
     torch.cuda.manual_seed_all(0)
@@ -186,7 +231,7 @@ def run(option, video_info, video_class)
     if option == 1:
         ppstream(video_info)
         pre_model_rgb = './result/model_rgb_classical_learning/model350.pkl'
-        frame_dir = '/home/ubuntu/html/backend/VideoNet/video'
+        frame_dir = '/home/ubuntu/html/frontend/public/videos'
         myTestNetwork = TestNetwork(frame_dir=frame_dir,video_info=video_info, pre_model_rgb=pre_model_rgb)
         label = myTestNetwork.test_model()
         videodb = VideoDB()
@@ -199,13 +244,36 @@ def run(option, video_info, video_class)
     else:
         videodb = VideoDB()
         videos = videodb.query_video(video_class)
+        #video = videos[0]
+        #print(video_class, len(videos))
+        pics = []
+        times = []
+        new_videos = []
+        for video in videos:
+            # video = '/home/ubuntu/html/frontend/public/videos/first_chew/test.mp4'
+            pic = video[0:-8]+'image_00001.jpg'
+            cap = cv2.VideoCapture(video)
+            time = 0.0
+            if cap.isOpened():  # 当成功打开视频时cap.isOpened()返回True,否则返回False
+                # get方法参数按顺序对应下表（从0开始编号)
+                rate = cap.get(5)  # 帧速率
+                frame_number = cap.get(7)  # 视频文件的帧数
+                seconds = frame_number / rate
+                time = seconds
+            new_video = video
+            pics.append(pic)
+            times.append(time)
+            new_videos.append(new_video)
+        print(video_class,',',new_videos,',',pics,',',times)
         return videos
 
 
+import sys
+#print(sys.argv)
+option = int(sys.argv[1])
+video_info = sys.argv[2]
+video_class = sys.argv[3]
+run(option, video_info, video_class)
 
-option = int(sys.argv[0])
-video_info = sys.argv[1]
-video_class = sys.argv[2]
-run(option. video_info, video_class)
 
-
+#ppstream('test')
